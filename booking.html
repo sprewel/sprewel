@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+      content="Mombasa, Deap Sea, Deep Sea Fishing, Mombasa Deep sea fishing, fishing, Sea, Mombasa Beach, Yacht, boat, fishing, Indian Ocean Fishing, catch and release fishing, full day fishing in mombasa, half day fishing in mombasa, fishing in mombasa, Fishing license, spearfishing, snorkelling, live bait, radar, gps, vacation, activities, rods, reels, catch and release, drink, fun, adventure, mtwapa offshore, watamu banks, north kenya banks, lamu, kilifi offshore, lamu, ngomeni, chesale, kipini"/>
+    <meta name="description" content="" />
+    <meta name="robots" content="index" />
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="style4.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+</head>
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#" style="color: white; font-weight: bold;">
+            <img src="images/icons/swordfishy.png" alt="">
+            Mombasa <br>Deep Sea Fishing</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="about/about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="catchrelease/catchrelease.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="payment.html">Secure Payments</a>
+              </li>   
+            </ul>
+          </div>
+        </div>
+      </nav>  
+<body>
+    <br><br>
+    <form class="form1">
+        <h3 style="font-weight: bold; margin-bottom: 40px;">Book your next Fishing Trip</h3>
+        
+        <label for="email">Destination, charter or Captain Name</label>
+        <br> 
+        <select id="location" class="custom-select">
+        <option value="" disabled selected hidden>Your Next Fishing Destination</option>
+        <option value="Mtwapa">Mtwapa, Kenya</option>
+        <option value="Kilifi">Kilifi, Kenya</option>
+        <option value="Watamu">Watamu, Kenya</option>
+        <option value="Kipini">Kipini, Kenya</option>
+        <option value="Lamu">Lamu, Kenya</option>
+        <option value="Ngomeni">Ngomeni, Kenya</option>
+        <option value="Che Shale">Che Shale, Kenya</option>
+        </select> 
+        <br><label for="email">Email:</label>
+        <br><input type="email" id="email" name="email" required>
+        <br><label for="date">Date:</label>
+        <br><input onfocus="(this.type='date')" type="text" id="date" class="form-control" placeholder="Select Fishing date" >
+        <br>
+        <input type="button" class="btn_book"  value="Check Availability">
+        </form>
+<script>
+    $(document).ready(function(){
+        $(".default_option").click(function(){
+            $(this).parent().toggleClass("active");
+        })
+
+        $(".select_ul li").click(function(){
+            var currentele = $(this).html();
+            $(".default_option li").html(currentele);
+            $(this).parents(".select_wrap").removeClass("active");
+        })
+    });
+    config = {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+        altInput: true,
+        altFormat: "F j, y (h:S K)" 
+    }
+    flatpickr("input[type=datetime-local],{}");
+</script>
+</body>
+</html>
